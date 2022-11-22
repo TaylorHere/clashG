@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
     <template class="ClashGAPPWindow" parent="AdwApplicationWindow">
-        <property name="title" translatable="yes">ClashG APP</property>
+        <property name="title" translatable="yes">ClashG</property>
         <property name="default-width">600</property>
         <property name="default-height">400</property>
         <child type="titlebar">

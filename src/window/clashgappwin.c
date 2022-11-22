@@ -23,9 +23,8 @@ clashg_app_window_init(ClashGAPPWindow* win) {
 static void
 clashg_app_window_class_init(ClashGAPPWindowClass* class) {
     gtk_widget_class_set_template_from_resource(GTK_WIDGET_CLASS (class),
-                                                "/org/gtk/clashgapp/window.xml");
+                                                "/resources/window.xml");
     gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS(class), ClashGAPPWindow, stack);
-    gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS(class), ClashGAPPWindow, header);
 
 }
 
