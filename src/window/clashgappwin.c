@@ -8,24 +8,40 @@
 #include "clashgappwin.h"
 
 struct _ClashGAPPWindow {
-    AdwApplicationWindow parent;
-    AdwHeaderBar* header;
+    GtkApplicationWindow parent;
+    GSettings *settings;
+
     GtkWidget* stack;
+    GtkWidget* gears;
 };
 
-G_DEFINE_TYPE(ClashGAPPWindow, clashg_app_window, ADW_TYPE_APPLICATION_WINDOW);
+G_DEFINE_TYPE(ClashGAPPWindow, clashg_app_window, GTK_TYPE_APPLICATION_WINDOW);
 
 static void
 clashg_app_window_init(ClashGAPPWindow* win) {
     gtk_widget_init_template(GTK_WIDGET (win));
+    GtkBuilder* builder;
+    GMenuModel* menu;
+
+    gtk_widget_init_template(GTK_WIDGET (win));
+      win->settings = g_settings_new ("org.nogfw.clashgapp");
+
+      g_settings_bind (win->settings, "transition",
+                       win->stack, "transition-type",
+                       G_SETTINGS_BIND_DEFAULT);
+    builder = gtk_builder_new_from_resource("/org/nogfw/clashgapp/resources/ui/gears-menu.xml");
+    menu = G_MENU_MODEL (gtk_builder_get_object(builder, "menu"));
+    gtk_menu_button_set_menu_model(GTK_MENU_BUTTON (win->gears), menu);
+    g_object_unref(builder);
+
 }
 
 static void
 clashg_app_window_class_init(ClashGAPPWindowClass* class) {
     gtk_widget_class_set_template_from_resource(GTK_WIDGET_CLASS (class),
-                                                "/resources/window.xml");
+                                                "/org/nogfw/clashgapp/resources/ui/window.xml");
     gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS(class), ClashGAPPWindow, stack);
-
+    gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS(class), ClashGAPPWindow, gears);
 }
 
 ClashGAPPWindow*

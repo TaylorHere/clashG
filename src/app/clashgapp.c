@@ -5,6 +5,7 @@
 
 #include "clashgapp.h"
 #include "../window/clashgappwin.h"
+#include "clashgappprefs.h"
 
 struct _ClashGAPP {
     AdwApplication parent;
@@ -12,6 +13,50 @@ struct _ClashGAPP {
 
 G_DEFINE_TYPE(ClashGAPP, clashg_app, ADW_TYPE_APPLICATION);
 
+static void
+preferences_activated (GSimpleAction *action,
+                       GVariant      *parameter,
+                       gpointer       app)
+{
+  ClashGAppPrefs *prefs;
+  GtkWindow *win;
+
+  win = gtk_application_get_active_window (GTK_APPLICATION (app));
+  prefs = clashg_app_prefs_new (CLASHG_APP_WINDOW(win));
+  gtk_window_present (GTK_WINDOW (prefs));
+
+}
+
+static void
+quit_activated (GSimpleAction *action,
+                GVariant      *parameter,
+                gpointer       app)
+{
+  g_application_quit (G_APPLICATION (app));
+}
+
+static GActionEntry app_entries[] =
+{
+  { "preferences", preferences_activated, NULL, NULL, NULL },
+  { "quit", quit_activated, NULL, NULL, NULL }
+};
+
+static void
+clashg_app_startup (GApplication *app)
+{
+  GtkBuilder *builder;
+  GMenuModel *app_menu;
+  const char *quit_accels[2] = { "<Ctrl>Q", NULL };
+
+  G_APPLICATION_CLASS (clashg_app_parent_class)->startup (app);
+
+  g_action_map_add_action_entries (G_ACTION_MAP (app),
+                                   app_entries, G_N_ELEMENTS (app_entries),
+                                   app);
+  gtk_application_set_accels_for_action (GTK_APPLICATION (app),
+                                         "app.quit",
+                                         quit_accels);
+}
 static void
 clashg_app_init(ClashGAPP* app) {
 }
@@ -49,12 +94,13 @@ static void
 clashg_app_class_init(ClashGAPPClass* class) {
     G_APPLICATION_CLASS (class)->activate = clashg_app_activate;
     G_APPLICATION_CLASS (class)->open = clashg_app_open;
+    G_APPLICATION_CLASS (class)->startup = clashg_app_startup;
 }
 
 ClashGAPP*
 clashg_app_new(void) {
     return g_object_new(CLASHG_APP_TYPE,
-                        "application-id", "org.gtk.exampleapp",
+                        "application-id", "org.nogfw.clashgapp",
                         "flags", G_APPLICATION_HANDLES_OPEN,
                         NULL);
 }

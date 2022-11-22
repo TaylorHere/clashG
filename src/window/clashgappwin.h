@@ -12,7 +12,7 @@
 
 #define CLASHG_APP_WINDOW_TYPE (clashg_app_window_get_type ())
 
-G_DECLARE_FINAL_TYPE (ClashGAPPWindow, clashg_app_window, CLASHG, APP_WINDOW, AdwApplicationWindow)
+G_DECLARE_FINAL_TYPE (ClashGAPPWindow, clashg_app_window, CLASHG, APP_WINDOW, GtkApplicationWindow)
 
 
 ClashGAPPWindow* clashg_app_window_new(ClashGAPP* app);

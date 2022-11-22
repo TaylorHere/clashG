@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-    <template class="ClashGAPPWindow" parent="AdwApplicationWindow">
+    <template class="ClashGAPPWindow" parent="GtkApplicationWindow">
         <property name="title" translatable="yes">ClashG</property>
         <property name="default-width">600</property>
         <property name="default-height">400</property>
@@ -9,6 +9,11 @@
                 <child type="title">
                     <object class="GtkStackSwitcher" id="tabs">
                         <property name="stack">stack</property>
+                    </object>
+                </child>
+                <child type="end">
+                    <object class="GtkMenuButton" id="gears">
+                        <property name="direction">none</property>
                     </object>
                 </child>
             </object>
