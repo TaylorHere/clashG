@@ -1,0 +1,3 @@
+[submodule "vendors/librequests"]
+	path = vendors/librequests
+	url = https://github.com/TaylorHere/librequests.git
