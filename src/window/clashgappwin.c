@@ -4,7 +4,7 @@
 
 #include <gtk/gtk.h>
 
-#include "../app/clashgapp.h"
+#include "clashgapp.h"
 #include "clashgappwin.h"
 
 struct _ClashGAPPWindow {

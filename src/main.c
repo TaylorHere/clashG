@@ -1,4 +1,4 @@
-#include "app/clashgapp.h"
+#include "clashgapp.h"
 
 
 int

@@ -7,7 +7,7 @@
 
 
 #include <gtk/gtk.h>
-#include "../app/clashgapp.h"
+#include "clashgapp.h"
 
 
 #define CLASHG_APP_WINDOW_TYPE (clashg_app_window_get_type ())
