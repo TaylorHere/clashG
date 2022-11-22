@@ -57,9 +57,7 @@ clashg_app_startup (GApplication *app)
                                          "app.quit",
                                          quit_accels);
 }
-static void
-clashg_app_init(ClashGAPP* app) {
-}
+
 
 static void
 clashg_app_activate(GApplication* app) {
@@ -103,4 +101,8 @@ clashg_app_new(void) {
                         "application-id", "org.nogfw.clashgapp",
                         "flags", G_APPLICATION_HANDLES_OPEN,
                         NULL);
+}
+
+static void
+clashg_app_init(ClashGAPP* app) {
 }

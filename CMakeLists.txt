@@ -76,12 +76,12 @@ add_custom_target(
 set(CMAKE_C_STANDARD 99)
 add_subdirectory(vendors/librequests)
 
-include_directories(src/app src/window src/prefs)
+include_directories(include)
 
 add_executable(${PROJECT_NAME}
         ${CMAKE_CURRENT_BINARY_DIR}/${GRESOURCE_C}
-        src/main.c src/app/clashgapp.h src/app/clashgapp.c src/window/clashgappwin.c src/window/clashgappwin.h
-        src/prefs/clashgappprefs.c src/prefs/clashgappprefs.h)
+        src/main.c include/clashgapp.h src/clashgapp.c src/clashgappwin.c include/clashgappwin.h
+        src/clashgappprefs.c include/clashgappprefs.h)
 
 target_link_libraries(${PROJECT_NAME} librequests ${ADW_LIBRARIES} ${GTK4_LIBRARIES})
 
