@@ -4,6 +4,8 @@
         <property name="title" translatable="yes">ClashG</property>
         <property name="default-width">400</property>
         <property name="default-height">600</property>
+        <property name="halign">start</property>
+        <property name="valign">start</property>
         <child>
             <object class="GtkBox">
                 <property name="orientation">vertical</property>
@@ -11,31 +13,54 @@
                     <object class="AdwHeaderBar">
                         <property name="centering-policy">loose</property>
                         <property name="title-widget">
+                            <!--                            <object class="AdwViewSwitcherTitle" id="title">-->
+                            <!--                                <property name="stack">stack</property>-->
+                            <!--                            </object>-->
                             <object class="GtkBox">
                                 <property name="orientation">horizontal</property>
                                 <property name="spacing">8</property>
+                                <property name="halign">center</property>
                                 <style>
                                     <class name="boxed-list"/>
                                 </style>
-
                                 <child>
-                                    <object class="GtkToggleButton">
-                                        <property name="label">Global</property>
+                                    <object class="GtkToggleButton" id="global-button">
+                                        <property name="has-frame">false</property>
+                                        <property name="group">global-button</property>
+                                        <property name="child">
+                                            <object class="AdwButtonContent">
+                                                <property name="icon-name">network-transmit-receive</property>
+                                                <property name="label" translatable="yes">Global</property>
+                                            </object>
+                                        </property>
                                     </object>
                                 </child>
                                 <child>
-                                    <object class="GtkToggleButton">
-                                        <property name="label">Rule</property>
+                                    <object class="GtkToggleButton" id="rule-button">
+                                        <property name="has-frame">false</property>
+                                        <property name="group">global-button</property>
+                                        <property name="child">
+                                            <object class="AdwButtonContent">
+                                                <property name="icon-name">media-playlist-shuffle</property>
+                                                <property name="label" translatable="yes">Rule</property>
+                                            </object>
+                                        </property>
                                     </object>
                                 </child>
                                 <child>
-                                    <object class="GtkToggleButton">
-                                        <property name="label">Direct</property>
+                                    <object class="GtkToggleButton" id="direct-button">
+                                        <property name="has-frame">false</property>
+                                        <property name="group">global-button</property>
+                                        <property name="child">
+                                            <object class="AdwButtonContent">
+                                                <property name="icon-name">network-error</property>
+                                                <property name="label" translatable="yes">Direct</property>
+                                            </object>
+                                        </property>
                                     </object>
                                 </child>
                             </object>
                         </property>
-
                         <child type="end">
                             <object class="GtkMenuButton" id="gears">
                                 <property name="direction">none</property>
@@ -45,7 +70,7 @@
                 </child>
                 <child>
                     <object class="AdwViewStack" id="stack">
-                        <property name="vexpand">True</property>
+                        <property name="vexpand">False</property>
                         <child>
                             <object class="AdwViewStackPage">
                                 <property name="name">proxy</property>
@@ -96,6 +121,9 @@
                     <object class="AdwViewSwitcherBar">
                         <property name="stack">stack</property>
                         <property name="reveal">true</property>
+                        <!--                        <binding name="reveal">-->
+                        <!--                            <lookup name="title-visible">title</lookup>-->
+                        <!--                        </binding>-->
                     </object>
                 </child>
             </object>

@@ -1,1 +1,5 @@
-hi, guys I'm new to gtk,  face some probleam on custom widget, I create a widget from `GtkBox` named [`ClashgRulePage`](https://github.com/TaylorHere/clashG/blob/master/src/rule_page.c) and a [template](https://github.com/TaylorHere/clashG/blob/master/resources/ui/rule-page.xml), used by main [window UI file](https://github.com/TaylorHere/clashG/blob/164101b36456d2707a05496411f3d0cc63b5d7cb/resources/ui/window.xml#L79)
+# ClashG - a Clash GUI for Gnome
+
+this project is stio WIP.
+
+![proxy-page](resources/screenshots/proxy-page.png)

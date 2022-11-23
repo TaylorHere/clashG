@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="ExpanderGroup" parent="AdwPreferencesGroup">
+        <property name="title">🚀 节点选择</property>
+        <child type="header-suffix">
+            <object class="GtkButton">
+                <property name="has-frame">false</property>
+                <property name="child">
+                    <object class="AdwButtonContent">
+                        <property name="icon-name">network-transmit</property>
+                        <property name="label" translatable="yes">Test</property>
+                    </object>
+                </property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkListBox">
+                <property name="selection-mode">none</property>
+                <style>
+                    <class name="boxed-list"/>
+                </style>
+                <child>
+                    <object class="AdwExpanderRow">
+                        <child>
+                            <object class="AdwActionRow">
+                                <property name="title">🇨🇦 加拿大 Edge</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="AdwActionRow">
+                                <property name="title">🇮🇳 印度 Edge</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="AdwActionRow">
+                                <property name="title">🇨🇳 台湾 CHT [01]</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </template>
+
+</interface>
