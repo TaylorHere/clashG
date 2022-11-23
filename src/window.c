@@ -6,7 +6,7 @@
 
 #include "app.h"
 #include "window.h"
-#include "rule_page.h"
+#include "rule-page.h"
 
 struct _ClashGAppWindow {
     AdwApplicationWindow parent;
@@ -27,9 +27,7 @@ clashg_app_window_init(ClashGAppWindow *win) {
     GMenuModel *menu;
 
     win->settings = g_settings_new("org.nogfw.clashgapp");
-    g_settings_bind(win->settings, "transition",
-                    win->stack, "transition-type",
-                    G_SETTINGS_BIND_DEFAULT);
+
 
     builder = gtk_builder_new_from_resource("/org/nogfw/clashgapp/resources/ui/gears-menu.xml");
     menu = G_MENU_MODEL (gtk_builder_get_object(builder, "menu"));

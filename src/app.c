@@ -6,12 +6,20 @@
 #include "app.h"
 #include "window.h"
 #include "prefs.h"
+#include "rule-page.h"
+#include "proxy-page.h"
 
 struct _ClashGAPP {
     AdwApplication parent;
 };
 
 G_DEFINE_TYPE(ClashGAPP, clashg_app, ADW_TYPE_APPLICATION);
+
+
+static void ensure_types() {
+    g_type_ensure(CLASHG_TYPE_RULE_PAGE);
+    g_type_ensure(CLASHG_TYPE_PROXY_PAGE);
+}
 
 static void
 preferences_activated(GSimpleAction *action,
@@ -44,6 +52,8 @@ clashg_app_startup(GApplication *app) {
     GtkBuilder *builder;
     GMenuModel *app_menu;
     const char *quit_accels[2] = {"<Ctrl>Q", NULL};
+
+    ensure_types();
 
     G_APPLICATION_CLASS (clashg_app_parent_class)->startup(app);
 

@@ -86,7 +86,7 @@ target_include_directories(librequests
 add_executable(${PROJECT_NAME}
         ${CMAKE_CURRENT_BINARY_DIR}/${GRESOURCE_C}
         src/main.c include/app.h src/app.c include/window.h src/window.c
-        include/prefs.h src/prefs.c src/rule_page.c include/rule_page.h)
+        include/prefs.h src/prefs.c src/rule-page.c include/rule-page.h src/proxy-page.c include/proxy-page.h)
 
 target_link_libraries(${PROJECT_NAME} librequests ${GTK4_LIBRARIES} ${ADW_LIBRARIES})
 

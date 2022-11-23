@@ -2,11 +2,12 @@
 // Created by taylor on 22-11-22.
 //
 
-#include "rule_page.h"
+#include "rule-page.h"
 
 struct _ClashgRulePage {
     GtkBox parent;
 
+    GtkButton button;
 };
 
 G_DEFINE_TYPE (ClashgRulePage, clashg_rule_page, GTK_TYPE_BOX)
@@ -32,9 +33,10 @@ clashg_rule_page_class_init(ClashgRulePageClass *class) {
 
     gtk_widget_class_set_template_from_resource(GTK_WIDGET_CLASS (class),
                                                 "/org/nogfw/clashgapp/resources/ui/rule-page.xml");
+    gtk_widget_class_bind_template_child(GTK_WIDGET_CLASS(class), ClashgRulePage, button);
 }
 
 GtkWidget *
-clashg_rule_page_new(ClashGAppWindow *win) {
+clashg_rule_page_new() {
     return g_object_new(CLASHG_TYPE_RULE_PAGE,  NULL);
 }

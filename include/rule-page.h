@@ -14,7 +14,7 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (ClashgRulePage, clashg_rule_page, CLASHG, RULE_PAGE, GtkBox)
 
-GtkWidget *clashg_rule_page_new(ClashGAppWindow *win);
+GtkWidget *clashg_rule_page_new();
 
 G_END_DECLS
 
