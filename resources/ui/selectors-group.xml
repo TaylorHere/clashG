@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface>
+    <template class="ClashgSelectorsGroup" parent="AdwPreferencesGroup">
+        <property name="title">👉 Selector</property>
+        <child>
+            <object class="GtkListBox">
+                <property name="selection-mode">none</property>
+                <style>
+                    <class name="boxed-list"/>
+                </style>
+                <child>
+                    <object class="AdwComboRow">
+                        <property name="title" translatable="yes">🚀 节点选择</property>
+                        <property name="subtitle">select</property>
+                        <property name="model">
+                            <object class="GtkStringList">
+                                <items>
+                                    <item translatable="yes">🇨🇦 加拿大 Edge</item>
+                                    <item translatable="yes">🇮🇳 印度 Edge</item>
+                                    <item translatable="yes">🇨🇳 台湾 CHT [01]</item>
+                                </items>
+                            </object>
+                        </property>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </template>
+</interface>

@@ -8,6 +8,10 @@
 #include "prefs.h"
 #include "rule-page.h"
 #include "proxy-page.h"
+#include "toggle-group.h"
+#include "selectors-group.h"
+#include "proxies-group.h"
+#include "url-test-group.h"
 
 struct _ClashGAPP {
     AdwApplication parent;
@@ -17,6 +21,10 @@ G_DEFINE_TYPE(ClashGAPP, clashg_app, ADW_TYPE_APPLICATION);
 
 
 static void ensure_types() {
+    g_type_ensure(CLASHG_TYPE_SELECTORS_GROUP);
+    g_type_ensure(CLASHG_TYPE_PROXIES_GROUP);
+    g_type_ensure(CLASHG_TYPE_URL_TEST_GROUP);
+    g_type_ensure(CLASHG_TYPE_TOGGLE_GROUP);
     g_type_ensure(CLASHG_TYPE_RULE_PAGE);
     g_type_ensure(CLASHG_TYPE_PROXY_PAGE);
 }

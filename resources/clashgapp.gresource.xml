@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/org/nogfw/clashgapp/">
+    <file preprocess="xml-stripblanks">resources/ui/selectors-group.xml</file>
+    <file preprocess="xml-stripblanks">resources/ui/url-test-group.xml</file>
+    <file preprocess="xml-stripblanks">resources/ui/proxies-group.xml</file>
+    <file preprocess="xml-stripblanks">resources/ui/toggle-group.xml</file>
     <file preprocess="xml-stripblanks">resources/ui/gears-menu.xml</file>
     <file preprocess="xml-stripblanks">resources/ui/prefs.xml</file>
     <file preprocess="xml-stripblanks">resources/ui/proxy-page.xml</file>
