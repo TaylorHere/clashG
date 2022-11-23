@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="ClashGProxyPage" parent="AdwViewStackPage">
+        <property name="name">proxy</property>
+        <property name="title">Proxy</property>
+        <property name="icon-name">network-workgroup</property>
+        <property name="child">
+            <object class="AdwStatusPage">
+                <property name="title">Proxy</property>
+            </object>
+        </property>
+    </template>
+</interface>

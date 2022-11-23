@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/org/nogfw/clashgapp/">
-    <file preprocess="xml-stripblanks">resources/ui/window.xml</file>
     <file preprocess="xml-stripblanks">resources/ui/gears-menu.xml</file>
     <file preprocess="xml-stripblanks">resources/ui/prefs.xml</file>
+    <file preprocess="xml-stripblanks">resources/ui/proxy-page.xml</file>
+    <file preprocess="xml-stripblanks">resources/ui/log-page.xml</file>
+    <file preprocess="xml-stripblanks">resources/ui/connection-page.xml</file>
+    <file preprocess="xml-stripblanks">resources/ui/rule-page.xml</file>
+    <file preprocess="xml-stripblanks">resources/ui/window.xml</file>
   </gresource>
 </gresources>

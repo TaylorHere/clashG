@@ -1,28 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-    <template class="ClashGAPPWindow" parent="GtkApplicationWindow">
+    <template class="ClashGAppWindow" parent="AdwApplicationWindow">
         <property name="title" translatable="yes">ClashG</property>
-        <property name="default-width">600</property>
-        <property name="default-height">400</property>
-        <child type="titlebar">
-            <object class="GtkHeaderBar" id="header">
-                <child type="title">
-                    <object class="GtkStackSwitcher" id="tabs">
-                        <property name="stack">stack</property>
-                    </object>
-                </child>
-                <child type="end">
-                    <object class="GtkMenuButton" id="gears">
-                        <property name="direction">none</property>
-                    </object>
-                </child>
-            </object>
-        </child>
+        <property name="default-width">400</property>
+        <property name="default-height">600</property>
         <child>
-            <object class="GtkBox" id="content_box">
+            <object class="GtkBox">
                 <property name="orientation">vertical</property>
                 <child>
-                    <object class="GtkStack" id="stack"/>
+                    <object class="AdwHeaderBar">
+                        <property name="centering-policy">loose</property>
+                        <property name="title-widget">
+                            <object class="GtkBox">
+                                <property name="orientation">horizontal</property>
+                                <property name="spacing">8</property>
+                                <style>
+                                    <class name="boxed-list"/>
+                                </style>
+
+                                <child>
+                                    <object class="GtkToggleButton">
+                                        <property name="label">Global</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkToggleButton">
+                                        <property name="label">Rule</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkToggleButton">
+                                        <property name="label">Direct</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </property>
+
+                        <child type="end">
+                            <object class="GtkMenuButton" id="gears">
+                                <property name="direction">none</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="AdwViewStack" id="stack">
+                        <property name="vexpand">True</property>
+                        <child>
+                            <object class="AdwViewStackPage">
+                                <property name="name">proxy</property>
+                                <property name="title">Proxy</property>
+                                <property name="icon-name">network-workgroup</property>
+                                <property name="child">
+                                    <object class="AdwStatusPage">
+                                        <property name="title">Proxy</property>
+                                    </object>
+                                </property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="AdwViewStackPage">
+                                <property name="name">connection</property>
+                                <property name="title">Connection</property>
+                                <property name="icon-name">network-transmit-receive</property>
+                                <property name="child">
+                                    <object class="AdwStatusPage">
+                                        <property name="title">Connection</property>
+                                    </object>
+                                </property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="AdwViewStackPage">
+                                <property name="name">rule</property>
+                                <property name="title">Rule</property>
+                                <property name="icon-name">media-playlist-shuffle</property>
+                                <property name="child">
+                                    <object class="ClashgRulePage" id="rulePage"/>
+                                </property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="AdwViewStackPage">
+                                <property name="name">log</property>
+                                <property name="title">Log</property>
+                                <property name="icon-name">dialog-information</property>
+                                <property name="child">
+                                    <object class="AdwStatusPage">
+                                        <property name="title">Log</property>
+                                    </object>
+                                </property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="AdwViewSwitcherBar">
+                        <property name="stack">stack</property>
+                        <property name="reveal">true</property>
+                    </object>
                 </child>
             </object>
         </child>

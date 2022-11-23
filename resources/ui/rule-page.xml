@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="ClashgRulePage" parent="GtkBox">
+        <child class="GtkButton" />
+    </template>
+</interface>

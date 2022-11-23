@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="ClashGLogPage" parent="AdwViewStackPage">
+        <property name="name">log</property>
+        <property name="title">Log</property>
+        <property name="icon-name">dialog-information</property>
+        <property name="child">
+            <object class="AdwStatusPage">
+                <property name="title">Log</property>
+            </object>
+        </property>
+    </template>
+</interface>

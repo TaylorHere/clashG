@@ -1,7 +1,7 @@
-#include "clashgapp.h"
+#include "app.h"
 
 
 int
-main(int argc, char* argv[]) {
+main(int argc, char *argv[]) {
     return g_application_run(G_APPLICATION (clashg_app_new()), argc, argv);
 }
